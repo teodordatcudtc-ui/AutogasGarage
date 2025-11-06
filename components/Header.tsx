@@ -113,12 +113,21 @@ export default function Header() {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden mt-4 overflow-hidden"
-            >
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-navy-dark/95 backdrop-blur-sm z-30 lg:hidden"
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="lg:hidden mt-4 overflow-hidden bg-navy-dark rounded-lg border border-neutral-2 relative z-40"
+              >
               <div className="flex flex-col space-y-2 py-4">
                 {navItems.map((item) => (
                   <Link
@@ -149,7 +158,8 @@ export default function Header() {
                   Programare
                 </Link>
               </div>
-            </motion.div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </nav>

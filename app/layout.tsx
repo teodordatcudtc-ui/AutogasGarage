@@ -75,6 +75,7 @@ export default function RootLayout({
   return (
     <html lang="ro" className={inter.variable}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="canonical" href="https://autogas-service.ro" />
         <link rel="alternate" hrefLang="ro" href="https://autogas-service.ro" />
         <script
