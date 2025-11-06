@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const topBarItems = [
   {
     type: 'address',
-    content: 'Strada Gheorghe Grigore Cantacuzino 348, Ploiești 100301',
+    content: 'Strada Gheorghe Grigore Cantacuzino 348, Ploiești',
     icon: 'location',
   },
   {
