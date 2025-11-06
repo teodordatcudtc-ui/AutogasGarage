@@ -6,7 +6,7 @@ import { CheckIcon } from './Icons'
 
 export default function HeroSplitScreen() {
   return (
-    <section className="min-h-[70vh] flex items-center relative overflow-hidden bg-gradient-to-br from-navy-dark via-blue-deep to-navy">
+    <section className="min-h-[70vh] flex items-center relative overflow-hidden bg-gradient-to-br from-navy-dark via-blue-deep to-navy pt-24 md:pt-0">
       {/* Background Image - Hidden on mobile, visible on desktop */}
       <div className="hidden lg:block absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[url('/assets/hero.jpg')] bg-cover bg-center" />

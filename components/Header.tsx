@@ -88,25 +88,43 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-text-light focus:outline-none focus:ring-2 focus:ring-accent rounded"
+            className="lg:hidden p-2 text-text-light focus:outline-none focus:ring-2 focus:ring-accent rounded relative z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Meniu mobil"
             aria-expanded={isMobileMenuOpen}
           >
-            <div className="w-6 h-6 flex flex-col justify-center space-y-1.5">
-              <motion.span
-                animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                className="block h-0.5 w-full bg-text-light transition-all"
-              />
-              <motion.span
-                animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="block h-0.5 w-full bg-text-light transition-all"
-              />
-              <motion.span
-                animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                className="block h-0.5 w-full bg-text-light transition-all"
-              />
-            </div>
+            {isMobileMenuOpen ? (
+              <motion.svg
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </motion.svg>
+            ) : (
+              <div className="w-6 h-6 flex flex-col justify-center space-y-1.5">
+                <motion.span
+                  animate={{ rotate: 0, y: 0 }}
+                  className="block h-0.5 w-full bg-text-light transition-all"
+                />
+                <motion.span
+                  animate={{ opacity: 1 }}
+                  className="block h-0.5 w-full bg-text-light transition-all"
+                />
+                <motion.span
+                  animate={{ rotate: 0, y: 0 }}
+                  className="block h-0.5 w-full bg-text-light transition-all"
+                />
+              </div>
+            )}
           </button>
         </div>
 

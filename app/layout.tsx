@@ -127,7 +127,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-navy-dark text-text-light antialiased">
+      <body className="bg-navy-dark text-text-light antialiased overflow-x-hidden">
         <TopBar />
         <Header />
         <main className="min-h-screen">{children}</main>

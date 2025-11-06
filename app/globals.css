@@ -7,6 +7,12 @@
     @apply border-neutral-2;
   }
   
+  html, body {
+    @apply overflow-x-hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
   body {
     @apply bg-navy-dark text-text-light;
     font-feature-settings: 'rlig' 1, 'calt' 1;
